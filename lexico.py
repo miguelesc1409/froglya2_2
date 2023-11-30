@@ -146,7 +146,6 @@ def t_DO(t):
     r'\bdo\b'
     return t
 
-
 def t_DURINDO(t):
     r'\bdurindo\b'
     return t
@@ -265,14 +264,14 @@ def prueba(data):
         id=id+1
         resultado_lexema.append(res)
 
-        excepciones = ['AGRUPACION_EC1','Y_LOGICO','SEPARADOR','O_LOGICO','IGUAL','SUMA']
+        excepciones = ['AGRUPACION_EC1','Y_LOGICO','SEPARADOR','O_LOGICO','ASIGNACION_VALORES','IGUAL','SUMA']
 
         if tok.type == 'VARIABLE' or tok.type == 'FUNCTION_NAME':
             if anterior not in excepciones:
                 ts.tablasimbolos.append(estado)
 
         anterior = tok.type
-    print(resultado_lexema)
+    #print(resultado_lexema)
 
     # Buscar símbolos que no coincidan con ningún patrón
     lineas_codigo = data.split('\n')

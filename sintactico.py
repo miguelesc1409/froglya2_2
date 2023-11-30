@@ -1038,12 +1038,12 @@ def p_error(p):
 
     while True:
         tok = yacc.token()  # Get the next token
-        print(tok)
-        if (not tok or
-                tok.type == 'AGRUPACION_BLOQUE_EC2'
+        #print(tok)
+        if ((not tok) or
+                (tok.type == 'AGRUPACION_BLOQUE_EC2'
                 or
                 tok.type == 'AGRUPACION_BLOQUE_EC1'
-                or tok.type == 'FIN' or tok.type == 'END'):
+                or tok.type == 'FIN' or tok.type == 'END')):
             break
     yacc.restart()
 

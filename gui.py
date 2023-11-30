@@ -173,7 +173,7 @@ def gui():
 
 
 
-        print(ttsabla)
+        #print(ttsabla)
 
         # Recorre cada fila de la tabla
 

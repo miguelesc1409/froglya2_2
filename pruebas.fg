@@ -1,0 +1,45 @@
+@Ejemplo_de_desicion
+
+begin
+
+    int edad = 25;
+    real dinero = 100.7;
+	int tiene_credencial = 1;
+
+	#Estructura 1
+    if (edad > 18 & dinero!=100.5) {
+		out 'Puede manejar el automovil';
+     } but {
+        out 'No puede manejar';
+     }
+
+	#Estructura 2
+    if (edad > 18 | dinero>=500.00) {
+		out 'Puede manejar el automovil';
+     } but {
+        out 'No puede manejar';
+     }
+
+
+	#Estructura 3
+    int contador = 0;
+	int vida=100;
+    during (contador < 5) {
+        out 'El contador es: '+ contador;
+		vida = vida-10;
+    }
+
+    #Estructura 4
+    int numero = 0;
+	int cuenta = 14;
+    do {
+        numero = numero+1;
+		cuenta = 522/2;
+     } durindo (numero <= 0);
+
+    out 'El numero ingresado es: '+ numero;
+
+end
+
+
+
