@@ -292,10 +292,10 @@ def p_def_retorno1_error(p):
     '''
 
     if ambit!='GLOBAL':
-        resultado = (509, p[1], p.lineno(1)-tam-9)
+        resultado = (509, p[1], p.lineno(1)-tam+1)
         pe.pilaerrores.append(resultado)
     else:
-        resultado = (512, p[1], p.lineno(1)-tam-9)
+        resultado = (512, p[1], p.lineno(1)-tam+1)
         pe.pilaerrores.append(resultado)
 
 
@@ -316,7 +316,7 @@ def p_def_llamadafuncion(p):
 def p_def_llamadafuncion_error(p):
     '''llamadafuncion : AGRUPACION_EC1 parametrosl AGRUPACION_EC2'''
 
-    resultado = (511, '', p.lineno(1)-tam-9)
+    resultado = (511, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -325,7 +325,7 @@ def p_def_llamadafuncion_error(p):
 def p_def_llamadafuncion1_error(p):
     '''llamadafuncion : VARIABLE AGRUPACION_EC1 parametrosl AGRUPACION_EC2'''
 
-    resultado = (511, p[1], p.lineno(1)-tam-9)
+    resultado = (511, p[1], p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -404,27 +404,29 @@ def p_def_estructuracontrol(p):
     '''
 
 def p_def_estructuraiteracion2(p):
-    '''estructuraiteracion2 : DO AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 DURING AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
+    '''estructuraiteracion2 : DO AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 DURINDO AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
 
 def p_def_estructuraiteracion2_error(p):
-    '''estructuraiteracion2 : AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 DURING AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
-    resultado = (507, '', p.lineno(1)-tam-9)
+    '''estructuraiteracion2 : AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 DURINDO AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
+    resultado = (507, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
     peux = 1
 
 def p_def_estructuraiteracion21_error(p):
-    '''estructuraiteracion2 : VARIABLE AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 DURING AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
-    resultado = (507, '', p.lineno(1)-tam-9)
+    '''estructuraiteracion2 : VARIABLE AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 DURINDO AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
+    resultado = (507, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
     peux = 1
 
+
+
 def p_def_estructuraiteracion22_error(p):
     '''estructuraiteracion2 : DO AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
-    resultado = (506, '', p.lineno(4)-tam-9)
+    resultado = (5071, '', p.lineno(4)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -432,7 +434,7 @@ def p_def_estructuraiteracion22_error(p):
 
 def p_def_estructuraiteracion23_error(p):
     '''estructuraiteracion2 : DO AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 VARIABLE AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2'''
-    resultado = (506, '', p.lineno(6)-tam-9)
+    resultado = (5071, '', p.lineno(5)-tam-9)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -459,7 +461,7 @@ def p_def_estructuraiteracion1(p):
 
 def p_def_estructuraiteracion1_error(p):
     '''estructuraiteracion1 : AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2'''
-    resultado = (506, '', p.lineno(1)-tam-9)
+    resultado = (506, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -467,7 +469,7 @@ def p_def_estructuraiteracion1_error(p):
 
 def p_def_estructuraiteracion12_error(p):
     '''estructuraiteracion1 : VARIABLE AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2'''
-    resultado = (506, '', p.lineno(1)-tam-9)
+    resultado = (506, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -475,7 +477,7 @@ def p_def_estructuraiteracion12_error(p):
 
 def p_def_estructuraiteracion13_error(p):
     '''estructuraiteracion1 : DURING AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 bloque AGRUPACION_BLOQUE_EC2'''
-    resultado = (517, '', p.lineno(4)-tam-9)
+    resultado = (517, '', p.lineno(4)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -483,7 +485,7 @@ def p_def_estructuraiteracion13_error(p):
 
 def p_def_estructuraiteracion14_error(p):
     '''estructuraiteracion1 : DURING AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque'''
-    resultado = (517, '', p.lineno(6)-tam-9)
+    resultado = (517, '', p.lineno(6)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -501,7 +503,7 @@ def p_def_estructuradesicion_error(p):
                             | AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 BUT AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (505, '', p.lineno(1)-tam-9)
+    resultado = (505, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -514,7 +516,7 @@ def p_def_estructuradesicion1_error(p):
                             | VARIABLE AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 BUT AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (505, '', p.lineno(1)-tam-9)
+    resultado = (505, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -525,7 +527,7 @@ def p_def_estructuradesicion2_error(p):
     estructuradesicion : IF AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (516, '', p.lineno(8)-tam-9)
+    resultado = (516, '', p.lineno(8)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -536,7 +538,7 @@ def p_def_estructuradesicion3_error(p):
     estructuradesicion : IF AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 VARIABLE AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (516, p[8], p.lineno(9)-tam-9)
+    resultado = (516, p[8], p.lineno(9)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -548,7 +550,7 @@ def p_def_estructuradesicion4_error(p):
                             | IF AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 bloque AGRUPACION_BLOQUE_EC2 BUT AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (517, '', p.lineno(4)-tam-9)
+    resultado = (517, '', p.lineno(4)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -559,7 +561,7 @@ def p_def_estructuradesicion41_error(p):
     estructuradesicion : IF AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 BUT bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (517, '', p.lineno(8)-tam-9)
+    resultado = (517, '', p.lineno(8)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -571,7 +573,7 @@ def p_def_estructuradesicion5_error(p):
                             | IF AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque  BUT AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2
     '''
 
-    resultado = (518, '', p.lineno(5)-tam-9)
+    resultado = (518, '', p.lineno(5)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -582,7 +584,7 @@ def p_def_estructuradesicion51_error(p):
     estructuradesicion : IF AGRUPACION_EC1 parametroscontrol AGRUPACION_EC2 AGRUPACION_BLOQUE_EC1 bloque AGRUPACION_BLOQUE_EC2 BUT AGRUPACION_BLOQUE_EC1 bloque
     '''
 
-    resultado = (518, '', p.lineno(9)-tam-9)
+    resultado = (518, '', p.lineno(9)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -676,7 +678,7 @@ def p_def_salidadatos(p):
 def p_def_salidadatos_error(p):
     '''salidadatos : VARIABLE expresioncad'''
 
-    resultado = (504, '', p.lineno(1)-tam-9)
+    resultado = (504, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -792,6 +794,19 @@ def p_def_declaracionint_error(p):
 
     resultado = (515, '',p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
+    global peux
+    peux = 1
+
+def p_def_declaracionint1_error(p):
+    '''
+    declaracionint : INT VARIABLE ASIGNACION_VALORES expresionreal
+                    | INT VARIABLE ASIGNACION_VALORES expresioncad
+    '''
+
+    resultado = (521, '', p.lineno(1) - tam + 1)
+    pe.pilaerrores.append(resultado)
+    global peux
+    peux = 1
 
 def p_def_declaracionreal(p):
     '''
@@ -820,6 +835,17 @@ def p_def_declaracionreal_error(p):
     resultado = (515, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
+    global peux
+    peux = 1
+
+def p_def_declaracionreal1_error(p):
+    '''
+    declaracionreal : REAL VARIABLE ASIGNACION_VALORES expresionint
+                    | REAL VARIABLE ASIGNACION_VALORES expresioncad
+    '''
+
+    resultado = (521, '', p.lineno(1) - tam + 1)
+    pe.pilaerrores.append(resultado)
     global peux
     peux = 1
 
@@ -853,6 +879,17 @@ def p_def_declaracioncad_error(p):
     global peux
     peux = 1
 
+def p_def_declaracioncad1_error(p):
+    '''
+    declaracioncad : CAD VARIABLE ASIGNACION_VALORES expresionint
+                    | CAD VARIABLE ASIGNACION_VALORES expresionreal
+    '''
+
+    resultado = (521, '', p.lineno(1) - tam + 1)
+    pe.pilaerrores.append(resultado)
+    global peux
+    peux = 1
+
 def p_def_lecturadatos(p):
     '''lecturadatos : IN expresioncad'''
     global nint
@@ -866,7 +903,7 @@ def p_def_lecturadatos(p):
 def p_def_lecturadatos_error(p):
     '''lecturadatos : VARIABLE expresioncad'''
 
-    resultado = (514, '', p.lineno(1)-tam-9)
+    resultado = (514, '', p.lineno(1)-tam+1)
     pe.pilaerrores.append(resultado)
 
     global peux
@@ -998,15 +1035,15 @@ def p_error(p):
         pass
 
     pe.pilaerrores.append(resultado)
+
     while True:
         tok = yacc.token()  # Get the next token
-        print("next token")
         print(tok)
         if (not tok or
                 tok.type == 'AGRUPACION_BLOQUE_EC2'
                 or
                 tok.type == 'AGRUPACION_BLOQUE_EC1'
-        or tok.type == 'FIN' or tok.type == 'END'):
+                or tok.type == 'FIN' or tok.type == 'END'):
             break
     yacc.restart()
 
