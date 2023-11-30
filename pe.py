@@ -1,0 +1,4 @@
+
+pilaerrores = []
+
+ban = 0

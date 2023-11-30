@@ -1,0 +1,15 @@
+@ Ejemplo_de_desicion
+
+begin
+    $$$$$$$$
+    int edad = 25;
+    int dinero = 100;$$$$$$$$$$
+    """"
+    if (edad >= 18 & dinero!=100) {
+        out 'Puede manejar la motocicleta';
+     } but {
+        out 'No puede manejarr la motocicleta';
+     }
+     ·····
+
+end

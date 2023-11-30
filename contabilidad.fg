@@ -1,0 +1,64 @@
+@Ejemplo_de_desicion
+
+# Inicio programa
+begin
+
+# Declaracion de variables numericas
+int a = 1;
+int b = 10;
+
+# Declaracion de variables de texto
+cad c = 'Hola';
+cad d = 'Mundo';
+
+# Declaracion de variables booleanas
+int ban = 0;
+int opc = 1;
+
+# Imprimir datos en la consola
+out '> Todas las variables declaradas <' ;
+out 'Variables -> ['+a+', '+b+', '+c+', '+d+', '+ban+', '+opc+']';
+out 'a: '+a ;
+out 'b: '+b ;
+out 'c: '+c ;
+out 'd: '+d ;
+out 'ban: '+ban ;
+out 'opc: '+opc ;
+
+# Validacion y reasignacion de expresiones enteras
+imprimir '> Actualizacion de las variables <' ;
+a = b*(23+6)-1 ;
+b = 2*23+a-1 ;
+out 'a = '+a ;
+out 'b = '+b ;
+
+# Declaracion de estructura de decision
+out '> Estructuras de decision <' ;
+if  (a<b|b>=a){
+out 'Condicion1' ;
+}
+
+if (ban&opc){
+imprimir 'Condicion2' ;
+}
+
+if (a <= b | b > a) {
+imprimir 'Condicion3' ;
+}
+
+if (ban & opc & a<b){
+imprimir 'Condicion4' ;
+}
+
+# Declaracion de estructura de iteracion
+out '> Estructuras de iteracion <' ;
+int cont = 0 ;
+int fin = 5 ;
+
+during (fin > cont){
+cont = cont+1 ;
+out 'Cont: '+cont ;
+}
+
+# Cierre del programa
+end

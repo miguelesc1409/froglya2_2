@@ -1,0 +1,30 @@
+@Operaciones
+
+begin
+
+    fun real Calcular (real num1, real num2, cad ope) {
+        real rez = 0.0;
+
+        if (ope == 1) {
+            rez = num1+num2;
+        } but {
+            if (ope == 2) {
+                rez = num1^num2;
+             } but {
+                if (ope == 3) {
+                    rez = num1%num2;
+                } but {
+                    rex = 0.0;
+                }
+             }
+        }
+        back rez
+    }
+
+    real num1 = in 'ingrese primer numero: ';
+    real num2 = in 'ingrese segundo numero: ';
+    cad ope = in 'ingrese operacion: ';
+
+    real res = Calcular (num1, num2, ope);
+
+end

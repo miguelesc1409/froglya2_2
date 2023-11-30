@@ -1,0 +1,21 @@
+@ Ejemplo_de_iteracion
+
+begin
+
+    #Estructura 1
+    int contador = 0;
+    during (contador < 5) {
+        out 'El contador es: '+ contador;
+
+
+    }
+
+    #Estructura 2
+    int numero = 0;
+    do {
+        numero = in 'Ingresa un numero mayor que cero: ';
+     } during (numero <= 0);
+
+    out 'El numero ingresado es: '+ numero;
+
+end

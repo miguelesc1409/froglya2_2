@@ -1,0 +1,22 @@
+@Elementos
+
+begin
+    int agua = 55;
+    real fuego = 51.5;
+
+    agua = (55*5)/0;
+    fuego = agua/2;
+    tierra = 58;
+
+
+    fun int Elementos(int aire, real plasma){
+        aire = 77;
+        plasma = 51;
+
+        back plasma
+    }
+
+    aire = agua;
+
+
+end
